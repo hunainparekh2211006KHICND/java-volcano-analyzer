@@ -81,5 +81,11 @@ public class VolcanoAnalyzer {
         return volcanos.stream().filter(i-> i.getYear() > 1800 && i.getTsu().equals("") && i.getLatitude() < 0 && i.getVEI() == 5).map(Volcano::getName).collect(Collectors.toList()).toArray(new String[0]);
     }
 
+    public String[] elevatedVolcanoes(int elevation){
 
+return volcanos.stream().filter(i-> i.getElevation() >= elevation ).map(Volcano::getName).collect(Collectors.toList()).toArray(new String[0]);
+
+
+
+    }
 }
