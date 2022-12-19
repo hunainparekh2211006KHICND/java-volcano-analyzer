@@ -45,7 +45,7 @@ public class VolcanoAnalyzerTests {
 
         //Teardown
     }
-
+    // 01 Test
     @Test
     public void eruptedInEighties() {
         //Setup
@@ -59,7 +59,7 @@ public class VolcanoAnalyzerTests {
 
         //Teardown
     }
-
+    //02 Test
     @Test
     public void highVEI() {
         //Setup
@@ -74,7 +74,7 @@ public class VolcanoAnalyzerTests {
 
         //Teardown
     }
-
+    //03 Test
     @Test
     public void mostDeadly() {
         //Setup
@@ -112,7 +112,7 @@ public class VolcanoAnalyzerTests {
         assertEquals( expected.getDEATHS(), actual.getDEATHS(), "should have correct DEATHS");
         //Teardown
     }
-
+    //04 Test
     @Test
     public void causedTsunami() {
         //Setup
@@ -126,7 +126,7 @@ public class VolcanoAnalyzerTests {
 
         //Teardown
     }
-
+    //05 Test
     @Test
     public void mostCommonType() {
         //Setup
