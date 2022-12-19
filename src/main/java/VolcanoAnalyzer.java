@@ -3,6 +3,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -38,6 +39,10 @@ public class VolcanoAnalyzer {
 
     public String[] highVEI(){
         return volcanos.stream().filter(i -> i.getVEI() >=6 ).map(Volcano::getName).collect(Collectors.toList()).toArray(new String[0]);
+    }
+
+    public Volcano mostDeadly(){ 
+        return volcanos.stream().max(Comparator.comparingInt(d-> Integer.parseInt((d.getDEATHS().isEmpty() ? "0" : d.getDEATHS())))).orElse(null);
     }
 
 }

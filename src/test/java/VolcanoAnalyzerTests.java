@@ -75,57 +75,57 @@ public class VolcanoAnalyzerTests {
         //Teardown
     }
 
-    // @Test
-    // public void mostDeadly() {
-    //     //Setup
-    //     Volcano expected = new Volcano();
-    //     expected.setYear(450);
-    //     expected.setTsu("");
-    //     expected.setEQ("");
-    //     expected.setName("Ilopango");
-    //     expected.setLocation("El Salvador");
-    //     expected.setCountry("El Salvador");
-    //     expected.setLatitude(13.672);
-    //     expected.setLongitude(-89.053);
-    //     expected.setElevation(450);
-    //     expected.setType("Caldera");
-    //     expected.setVEI(6);
-    //     expected.setAgent("");
-    //     expected.setDEATHS("30000");
+    @Test
+    public void mostDeadly() {
+        //Setup
+        Volcano expected = new Volcano();
+        expected.setYear(450);
+        expected.setTsu("");
+        expected.setEQ("");
+        expected.setName("Ilopango");
+        expected.setLocation("El Salvador");
+        expected.setCountry("El Salvador");
+        expected.setLatitude(13.672);
+        expected.setLongitude(-89.053);
+        expected.setElevation(450);
+        expected.setType("Caldera");
+        expected.setVEI(6);
+        expected.setAgent("");
+        expected.setDEATHS("30000");
 
-    //     //Execute
-    //     Volcano actual = va.mostDeadly();
+        //Execute
+        Volcano actual = va.mostDeadly();
 
-    //     //Assert
-    //     assertEquals( expected.getYear(), actual.getYear(), "should have correct year",);
-    //     assertEquals( expected.getTsu(), actual.getTsu(), "should have correct Tsu");
-    //     assertEquals(expected.getEQ(), actual.getEQ(), "should have correct EQ" );
-    //     assertEquals( expected.getName(), actual.getName(),"should have correct Name" );
-    //     assertEquals( expected.getLocation(), actual.getLocation(), "should have correct Location");
-    //     assertEquals( expected.getCountry(), actual.getCountry(), "should have correct Country");
-    //     assertEquals( expected.getLatitude(), actual.getLatitude(), "should have correct Latitude");
-    //     assertEquals( expected.getLongitude(), actual.getLongitude(), "should have correct Longitude");
-    //     assertEquals( expected.getElevation(), actual.getElevation(),"should have correct Elevation" );
-    //     assertEquals( expected.getType(), actual.getType(), "should have correct Type");
-    //     assertEquals( expected.getVEI(), actual.getVEI(), "should have correct VEI");
-    //     assertEquals( expected.getAgent(), actual.getAgent(), "should have correct Agent");
-    //     assertEquals( expected.getDEATHS(), actual.getDEATHS(), "should have correct DEATHS");
-    //     //Teardown
-    // }
+        //Assert
+        assertEquals( expected.getYear(), actual.getYear(), "should have correct year");
+        assertEquals( expected.getTsu(), actual.getTsu(), "should have correct Tsu");
+        assertEquals(expected.getEQ(), actual.getEQ(), "should have correct EQ" );
+        assertEquals( expected.getName(), actual.getName(),"should have correct Name" );
+        assertEquals( expected.getLocation(), actual.getLocation(), "should have correct Location");
+        assertEquals( expected.getCountry(), actual.getCountry(), "should have correct Country");
+        assertEquals( expected.getLatitude(), actual.getLatitude(), "should have correct Latitude");
+        assertEquals( expected.getLongitude(), actual.getLongitude(), "should have correct Longitude");
+        assertEquals( expected.getElevation(), actual.getElevation(),"should have correct Elevation" );
+        assertEquals( expected.getType(), actual.getType(), "should have correct Type");
+        assertEquals( expected.getVEI(), actual.getVEI(), "should have correct VEI");
+        assertEquals( expected.getAgent(), actual.getAgent(), "should have correct Agent");
+        assertEquals( expected.getDEATHS(), actual.getDEATHS(), "should have correct DEATHS");
+        //Teardown
+    }
 
-    // @Test
-    // public void causedTsunami() {
-    //     //Setup
-    //     double expected = 17;
+    @Test
+    public void causedTsunami() {
+        //Setup
+        double expected = 17;
 
-    //     //Execute
-    //     double actual = va.causedTsunami();
+        //Execute
+        double actual = va.causedTsunami();
 
-    //     //Assert
-    //     assertEquals( expected, actual, .1, "should be about 17.0 percent");
+        //Assert
+        assertEquals( expected, actual, .1, "should be about 17.0 percent");
 
-    //     //Teardown
-    // }
+        //Teardown
+    }
 
     // @Test
     // public void mostCommonType() {
