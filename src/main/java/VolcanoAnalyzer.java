@@ -37,7 +37,7 @@ public class VolcanoAnalyzer {
     }
 
     public String[] highVEI(){
-        return volcanos.stream().filter(i -> i.getVEI() >=6 ).collect(Collectors.toList()).toArray(new String[0]);
+        return volcanos.stream().filter(i -> i.getVEI() >=6 ).map(Volcano::getName).collect(Collectors.toList()).toArray(new String[0]);
     }
 
 }
