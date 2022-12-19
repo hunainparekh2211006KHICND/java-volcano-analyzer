@@ -86,6 +86,6 @@ public class VolcanoAnalyzer {
     }
 
     public String[] topAgentsOfDeath(){
-        return  volcanos.stream().sorted((i,j) -> Integer.parseInt((i.getDEATHS().isEmpty() ? "0" : i.getDEATHS())) - Integer.parseInt((j.getDEATHS().isEmpty() ? "0" : j.getDEATHS()))).limit(10).map(i-> Arrays.asList(i.getAgent().isEmpty() ? new String[0] : i.getAgent().split(","))).flatMap(List::stream).distinct().collect(Collectors.toList()).toArray(new String[0]);
+        return volcanos.stream().sorted((i, j)-> Integer.parseInt(j.getDEATHS().isEmpty() ? "0" : j.getDEATHS()) - Integer.parseInt(i.getDEATHS().isEmpty() ? "0" : i.getDEATHS())).limit(10).map(v-> Arrays.asList( v.getAgent().isEmpty() ? new String[0] : v.getAgent().split(","))).flatMap(List::stream).distinct().collect(Collectors.toList()).toArray(new String[0]);
     }
 }
