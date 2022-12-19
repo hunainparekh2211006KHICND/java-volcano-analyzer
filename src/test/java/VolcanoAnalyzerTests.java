@@ -140,7 +140,7 @@ public class VolcanoAnalyzerTests {
 
         //Teardown
     }
-
+    //06 Test
     @Test
     public void eruptionsByCountry() {
         //Setup
@@ -159,7 +159,7 @@ public class VolcanoAnalyzerTests {
         assertEquals( expected3, actual3, "should be 0 eruptions in Zimbabwe");
         //Teardown
     }
-
+    //07 Test
     @Test
     public void averageElevation() {
         //Setup
@@ -173,7 +173,7 @@ public class VolcanoAnalyzerTests {
 
         //Teardown
     }
-
+    //08 Test
     @Test
     public void volcanoTypes() {
         //Setup
@@ -187,7 +187,7 @@ public class VolcanoAnalyzerTests {
 
         //Teardown
     }
-
+    //09 Test
     @Test
     public void percentNorth() {
         //Setup
@@ -201,7 +201,7 @@ public class VolcanoAnalyzerTests {
 
         //Teardown
     }
-
+    //10 Test
     @Test
     public void manyFilters() {
         //Setup
@@ -215,7 +215,7 @@ public class VolcanoAnalyzerTests {
 
         //Teardown
     }
-
+    //11 Test
     @Test
     public void elevatedVolcanoes() {
         //Setup
@@ -230,19 +230,19 @@ public class VolcanoAnalyzerTests {
 
         //Teardown
     }
+    //12 Test
+    @Test
+    public void topAgentsOfDeath() {
+        //Setup
+        String[] expected = { "P", "M", "W", "A", "I" };
 
-    // @Test
-    // public void topAgentsOfDeath() {
-    //     //Setup
-    //     String[] expected = { "P", "M", "W", "A", "I" };
+        //Execute
+        String[] actual = va.topAgentsOfDeath();
 
-    //     //Execute
-    //     String[] actual = va.topAgentsOfDeath();
+        //Assert
+        assertEquals( expected.length, actual.length, "should have 5 Agents of Death");
+        assertArrayEquals(expected, actual, "should have the correct Agents of Death");
 
-    //     //Assert
-    //     assertEquals( expected.length, actual.length, "should have 5 Agents of Death");
-    //     assertArrayEquals(expected, actual, "should have the correct Agents of Death");
-
-    //     //Teardown
-    // }
+        //Teardown
+    }
 }

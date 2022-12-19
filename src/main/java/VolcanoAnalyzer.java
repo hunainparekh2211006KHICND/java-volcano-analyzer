@@ -3,11 +3,11 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -82,10 +82,10 @@ public class VolcanoAnalyzer {
     }
 
     public String[] elevatedVolcanoes(int elevation){
+        return volcanos.stream().filter(i-> i.getElevation() >= elevation ).map(Volcano::getName).collect(Collectors.toList()).toArray(new String[0]);
+    }
 
-return volcanos.stream().filter(i-> i.getElevation() >= elevation ).map(Volcano::getName).collect(Collectors.toList()).toArray(new String[0]);
-
-
-
+    public String[] topAgentsOfDeath(){
+        return  volcanos.stream().sorted((i,j) -> Integer.parseInt((i.getDEATHS().isEmpty() ? "0" : i.getDEATHS())) - Integer.parseInt((j.getDEATHS().isEmpty() ? "0" : j.getDEATHS()))).limit(10).map(i-> Arrays.asList(i.getAgent().isEmpty() ? new String[0] : i.getAgent().split(","))).flatMap(List::stream).distinct().collect(Collectors.toList()).toArray(new String[0]);
     }
 }
