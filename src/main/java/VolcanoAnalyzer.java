@@ -54,4 +54,15 @@ public class VolcanoAnalyzer {
         .max(Map.Entry.comparingByValue()).get().getKey()));
     }
 
+    public int eruptionsByCountry(String country){
+        return volcanos.stream().filter(i->i.getCountry().equals(country)).collect(Collectors.toList()).size();
+    }
+
+
+
+
+
+
+
+
 }
