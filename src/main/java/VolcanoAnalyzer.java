@@ -36,4 +36,8 @@ public class VolcanoAnalyzer {
         return volcanos.stream().filter(i-> i.getYear() >= 1980 && i.getYear() < 1990).collect(Collectors.toList());
     }
 
+    public String[] highVEI(){
+        return volcanos.stream().filter(i -> i.getVEI() >=6 ).collect(Collectors.toList()).toArray(new String[0]);
+    }
+
 }
