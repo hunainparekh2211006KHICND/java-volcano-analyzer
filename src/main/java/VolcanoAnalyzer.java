@@ -74,7 +74,7 @@ public class VolcanoAnalyzer {
     }
 
     public double percentNorth(){
-        return volcanos.stream().filter(i-> i.getLatitude() > 0).count() * 100 / volcanos.size();
+        return volcanos.stream().filter(i-> i.getLatitude() > 0).count() * 100d / volcanos.size();
     }
 
 
