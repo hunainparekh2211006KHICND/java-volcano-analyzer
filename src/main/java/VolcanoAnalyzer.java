@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.TypeFactory;
@@ -30,5 +31,9 @@ public class VolcanoAnalyzer {
     }
 
     //add methods here to meet the requirements in README.md
+
+    public List<Volcano> eruptedInEighties(){
+        return volcanos.stream().filter(i-> i.getYear() >= 1980 && i.getYear() < 1990).collect(Collectors.toList());
+    }
 
 }
