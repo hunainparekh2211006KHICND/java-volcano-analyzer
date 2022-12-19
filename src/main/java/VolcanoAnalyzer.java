@@ -70,10 +70,11 @@ public class VolcanoAnalyzer {
     }
 
     public String[] volcanoTypes(){
-    
     return volcanos.stream().map(Volcano::getType).distinct().collect(Collectors.toList()).toArray(new String[0]);
-    
-    
+    }
+
+    public double percentNorth(){
+        return volcanos.stream().filter(i-> i.getLatitude() > 0).count() * 100 / volcanos.size();
     }
 
 
