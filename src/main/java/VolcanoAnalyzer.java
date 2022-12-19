@@ -69,23 +69,30 @@ public class VolcanoAnalyzer {
         return volcanos.stream().mapToDouble(Volcano::getElevation).sum() / volcanos.size();
     }
 
-    public String[] volcanoTypes(){
-    return volcanos.stream().map(Volcano::getType).distinct().collect(Collectors.toList()).toArray(new String[0]);
+    public String[] volcanoTypes() {
+        return volcanos.stream().map(Volcano::getType).distinct().collect(Collectors.toList()).toArray(new String[0]);
     }
 
-    public double percentNorth(){
-        return volcanos.stream().filter(i-> i.getLatitude() > 0).count() * 100d / volcanos.size();
+    public double percentNorth() {
+        return volcanos.stream().filter(i -> i.getLatitude() > 0).count() * 100d / volcanos.size();
     }
 
-    public String[] manyFilters(){
-        return volcanos.stream().filter(i-> i.getYear() > 1800 && i.getTsu().equals("") && i.getLatitude() < 0 && i.getVEI() == 5).map(Volcano::getName).collect(Collectors.toList()).toArray(new String[0]);
+    public String[] manyFilters() {
+        return volcanos.stream()
+                .filter(i -> i.getYear() > 1800 && i.getTsu().equals("") && i.getLatitude() < 0 && i.getVEI() == 5)
+                .map(Volcano::getName).collect(Collectors.toList()).toArray(new String[0]);
     }
 
-    public String[] elevatedVolcanoes(int elevation){
-        return volcanos.stream().filter(i-> i.getElevation() >= elevation ).map(Volcano::getName).collect(Collectors.toList()).toArray(new String[0]);
+    public String[] elevatedVolcanoes(int elevation) {
+        return volcanos.stream().filter(i -> i.getElevation() >= elevation).map(Volcano::getName)
+                .collect(Collectors.toList()).toArray(new String[0]);
     }
 
-    public String[] topAgentsOfDeath(){
-        return volcanos.stream().sorted((i, j)-> Integer.parseInt(j.getDEATHS().isEmpty() ? "0" : j.getDEATHS()) - Integer.parseInt(i.getDEATHS().isEmpty() ? "0" : i.getDEATHS())).limit(10).map(v-> Arrays.asList( v.getAgent().isEmpty() ? new String[0] : v.getAgent().split(","))).flatMap(List::stream).distinct().collect(Collectors.toList()).toArray(new String[0]);
+    public String[] topAgentsOfDeath() {
+        return volcanos.stream()
+                .sorted((i, j) -> Integer.parseInt(j.getDEATHS().isEmpty() ? "0" : j.getDEATHS())
+                        - Integer.parseInt(i.getDEATHS().isEmpty() ? "0" : i.getDEATHS()))
+                .limit(10).map(v -> Arrays.asList(v.getAgent().isEmpty() ? new String[0] : v.getAgent().split(",")))
+                .flatMap(List::stream).distinct().collect(Collectors.toList()).toArray(new String[0]);
     }
 }
