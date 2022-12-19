@@ -127,19 +127,19 @@ public class VolcanoAnalyzerTests {
         //Teardown
     }
 
-    // @Test
-    // public void mostCommonType() {
-    //     //Setup
-    //     String expected = "Stratovolcano";
+    @Test
+    public void mostCommonType() {
+        //Setup
+        String expected = "Stratovolcano";
 
-    //     //Execute
-    //     String actual = va.mostCommonType();
+        //Execute
+        String actual = va.mostCommonType();
 
-    //     //Assert
-    //     assertEquals( expected, actual, "should be Stratovolcano");
+        //Assert
+        assertEquals( expected, actual, "should be Stratovolcano");
 
-    //     //Teardown
-    // }
+        //Teardown
+    }
 
     // @Test
     // public void eruptionsByCountry() {

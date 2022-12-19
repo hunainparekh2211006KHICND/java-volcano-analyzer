@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -47,6 +48,11 @@ public class VolcanoAnalyzer {
 
     public double causedTsunami(){
         return volcanos.stream().filter(i-> i.getTsu().equals("tsu")).count() * 100 / volcanos.size();
+    }
+
+    public String mostCommonType(){
+        return volcanos.stream().collect(Collectors.collectingAndThen(Collectors.groupingBy(Volcano::getType, Collectors.counting()), i -> i.entrySet().stream()
+        .max(Map.Entry.comparingByValue()).get().getKey()));
     }
 
 }
