@@ -45,4 +45,8 @@ public class VolcanoAnalyzer {
         return volcanos.stream().max(Comparator.comparingInt(d-> Integer.parseInt((d.getDEATHS().isEmpty() ? "0" : d.getDEATHS())))).orElse(null);
     }
 
+    public double causedTsunami(){
+        return volcanos.stream().filter(i-> i.getTsu().equals("tsu")).count() * 100 / volcanos.size();
+    }
+
 }
