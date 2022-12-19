@@ -174,19 +174,19 @@ public class VolcanoAnalyzerTests {
         //Teardown
     }
 
-    // @Test
-    // public void volcanoTypes() {
-    //     //Setup
-    //     String[] expected = { "Caldera", "Stratovolcano", "Complex volcano", "Shield volcano", "Pyroclastic shield", "Volcanic field", "Lava dome", "Subglacial volcano", "Crater rows", "Tuff cone", "Fissure vent", "Pyroclastic cone", "Submarine volcano", "Lava cone", "Pumice cone", "Mud volcano", "Cinder cone", "Compound volcano", "Maar"};
-    //     //Execute
-    //     String[] actual = va.volcanoTypes();
+    @Test
+    public void volcanoTypes() {
+        //Setup
+        String[] expected = { "Caldera", "Stratovolcano", "Complex volcano", "Shield volcano", "Pyroclastic shield", "Volcanic field", "Lava dome", "Subglacial volcano", "Crater rows", "Tuff cone", "Fissure vent", "Pyroclastic cone", "Submarine volcano", "Lava cone", "Pumice cone", "Mud volcano", "Cinder cone", "Compound volcano", "Maar"};
+        //Execute
+        String[] actual = va.volcanoTypes();
 
-    //     //Assert
-    //     assertEquals(expected.length, actual.length, "should have 19 volcano types");
-    //     assertArrayEquals(expected, actual, "should have the correct volcano types");
+        //Assert
+        assertEquals(expected.length, actual.length, "should have 19 volcano types");
+        assertArrayEquals(expected, actual, "should have the correct volcano types");
 
-    //     //Teardown
-    // }
+        //Teardown
+    }
 
     // @Test
     // public void percentNorth() {

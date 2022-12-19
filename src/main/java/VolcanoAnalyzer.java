@@ -7,6 +7,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -67,5 +68,13 @@ public class VolcanoAnalyzer {
     public double averageElevation() {
         return volcanos.stream().mapToDouble(Volcano::getElevation).sum() / volcanos.size();
     }
+
+    public String[] volcanoTypes(){
+    
+    return volcanos.stream().map(Volcano::getType).distinct().collect(Collectors.toList()).toArray(new String[0]);
+    
+    
+    }
+
 
 }
